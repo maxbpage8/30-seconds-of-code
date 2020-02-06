@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Counter</string>
+
+    <string name="countDispName">0</string>
+
+    <string name="plusbtnName">+</string>
+    <string name="minusbtnName">-</string>
+    <string name="resetbtnName">RESET</string>
+
+    <string name="entCapName">Enter a capacity: </string>
+
+    <string name="backBtnName">DARK</string>
+
+
+
+
+
+</resources>
