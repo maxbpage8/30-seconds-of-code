@@ -17,14 +17,18 @@ public class MainActivity extends AppCompatActivity {
 
     // variable in appCountNum
     public int appCountNum = 0;
+    /*
     public int progressInt = 0;
     public int percentUser = 100;
     public int DEFAULT_MAX = 100;
 
+     */
+
     Button btnAdd, btnSub, btnReset;
     TextView txtvDispCount;
     EditText userCapNum;
-    ProgressBar userProgMax;
+
+    //final ProgressBar userProgMax = (ProgressBar) findViewById(R.id.determinateBar);
 
 
 
@@ -39,19 +43,22 @@ public class MainActivity extends AppCompatActivity {
         btnReset = (Button) findViewById(R.id.btnReset);
 
         txtvDispCount = (TextView) findViewById(R.id.txtCount);
+        //userCapNum = (EditText) findViewById(R.id.editUserCapacity);
 
 
-        userProgMax = (ProgressBar) findViewById(R.id.determinateBar);
+
 // integer.valueof()
 
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 appCountNum++;
-                userProgMax.setProgress(appCountNum);
+                //String progressMax = userCapNum.getText().toString();
+
+                //userProgMax.setProgress(Integer.parseInt(progressMax));
+
                 txtvDispCount.setText(Integer.toString(appCountNum));
 
-                progressInt = progressInt + percentUser;
 
 
 
@@ -68,10 +75,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        userCapNum.(new View.OnClickListener() {
-            public void (View view) {
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 appCountNum = 0;
                 txtvDispCount.setText(Integer.toString(appCountNum));
+
+
 
             }
         });
@@ -87,13 +96,7 @@ public class MainActivity extends AppCompatActivity {
         //track increase and decreases every miunte (or hour ) from start to reset
         // when + is increased, start timer, when + is increased, save 1
 
-        userCapNum.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                appCountNum++;
-                txtvDispCount.setText(Integer.toString(appCountNum));
 
-            }
-        });
 
 
     }
