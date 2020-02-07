@@ -14,21 +14,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    // variable in appCountNum
     public int appCountNum = 0;
-    /*
-    public int progressInt = 0;
-    public int percentUser = 100;
-    public int DEFAULT_MAX = 100;
 
-     */
-
-    Button btnAdd, btnSub, btnReset;
+    // 1 create button in activity xml with id A
+    Button btnAdd, btnSub, btnReset, btnApply;
     TextView txtvDispCount;
     EditText userCapNum;
-
-    //final ProgressBar userProgMax = (ProgressBar) findViewById(R.id.determinateBar);
+    ProgressBar countProgBar;
 
 
 
@@ -38,26 +30,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 2 create button in main activity (OnCreate) and link up with id A
         btnAdd = (Button) findViewById(R.id.btnIncrease);
         btnSub = (Button) findViewById(R.id.btnDecrease);
         btnReset = (Button) findViewById(R.id.btnReset);
+        btnApply = (Button) findViewById(R.id.btnApply);
+
 
         txtvDispCount = (TextView) findViewById(R.id.txtCount);
-        //userCapNum = (EditText) findViewById(R.id.editUserCapacity);
+        userCapNum = (EditText) findViewById(R.id.entCap);
+
+        countProgBar = (ProgressBar) findViewById(R.id.progressBar2);
+
+        //integer.valueOf();
 
 
-
-// integer.valueof()
-
-
+        // 3 set onlcick listener for button
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 appCountNum++;
-                //String progressMax = userCapNum.getText().toString();
 
-                //userProgMax.setProgress(Integer.parseInt(progressMax));
 
                 txtvDispCount.setText(Integer.toString(appCountNum));
+                countProgBar.setProgress(appCountNum);
 
 
 
@@ -69,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 appCountNum--;
                 txtvDispCount.setText(Integer.toString(appCountNum));
+                countProgBar.setProgress(appCountNum);
 
 
 
@@ -79,7 +75,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 appCountNum = 0;
                 txtvDispCount.setText(Integer.toString(appCountNum));
+                countProgBar.setProgress(appCountNum);
+                userCapNum.setText("R.id.entCapTextName");
 
+
+            }
+        });
+
+        btnApply.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                String progressMax = userCapNum.getText().toString();
+                countProgBar.setMax((((Integer.parseInt(progressMax)))));
+                txtvDispCount.setText(Integer.toString(appCountNum));
+                countProgBar.setProgress(appCountNum);
 
 
             }

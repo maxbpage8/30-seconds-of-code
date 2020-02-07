@@ -7,6 +7,12 @@
     <string name="minusbtnName">-</string>
     <string name="resetbtnName">RESET</string>
 
+    <string name="applybtnName">APPLY</string>
+
+
+    <string name="entCapTextName">Enter capacity: </string>
+
+
 
 
 
